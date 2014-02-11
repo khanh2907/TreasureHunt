@@ -1,0 +1,254 @@
+/* 
+    Document   : main.css
+    Created on : 15/02/2013, 2:38:36 PM
+    Author     : Bryn
+    Description:
+        All Treasure Hunt styles go here for now. May split for desktop/mobile later
+*/
+
+/* Sticky footer */
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    background-color: #555;
+}
+h1 {
+    background: SteelBlue; /* SteelBlue is rgb(70,130,180) */
+    background: rgba(70,130,180 , 0.8);
+    font-family: Arial, sans-serif;
+    margin: 1em 0 0.5em 0;
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 0 10px 0 10px;
+}
+h2 {
+    color: SteelBlue;
+    border-bottom: 1px solid rgba(70,130,180 , 0.3);
+    font-family: Arial, sans-serif;
+    margin: 1em 0 0.5em 0;
+    text-transform: uppercase;
+}
+/* Tables should scroll */
+table {width:100%; border:1px solid #000000;}
+thead {background-color:SteelBlue;color:#FFFFFF;text-align:center; position:relative; top:0px;}
+thead th { height:50px; width:120px; text-align:center;border-width: 1px;border-style: outset;}
+tbody {color:#000000;text-align:center; height:150px; overflow: scroll; margin:0px;}
+tbody td { height:60px; width:100px;border-width: 1px;border-style: outset;}
+tfoot {background-color:SteelBlue; color:#FFFFFF;text-align:center; position:fixed; bottom:0px;}
+tfoot td { height:50px; width:120px; text-align:center;border-width: 1px;border-style: outset;}
+
+#wrapper {
+    width: 100%;
+    max-width: 750px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+    background-color: #fff;
+}
+#footer #push {
+    height: 142px; /* .push must be the same height as .footer */
+}
+
+/* centred login box */
+#login {
+    margin: 0 auto;
+}
+#message {
+    color: red;
+}
+
+/* Navigation Bar */
+#nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    max-width: 750px;
+    float: left;
+    margin: 0 0 3em 0;
+    padding: 0;
+    list-style: none;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
+    display: block;
+    z-index: -1;
+}
+#nav li {
+    float: left; 
+    display: block;
+}
+#nav li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: SteelBlue;
+    border-right: 1px solid #ccc; }
+#nav li a:hover {
+    color: #c00;
+    background-color: #fff; }
+
+/* StackOverflow-style badges */
+.badge {
+    display: inline-block;
+    color: #333;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    border: 2px solid #333;
+    background-color: #eee;
+    padding: 2px 8px 4px;
+    margin: 3px 3px 0 0;
+    
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.badge:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+.modal {
+  display: none;
+  width: 400px;
+  background: #fff;
+  padding: 15px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+}
+
+.modal a.close-modal {
+  position: absolute;
+  top: -12.5px;
+  right: -12.5px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url(close.png) no-repeat 0 0;
+}
+
+.modal-spinner {
+  display: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -32px;
+  margin-top: -32px;
+  background: url(spinner.gif) #111 no-repeat center center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+textarea {
+    resize: none;
+}
+
+article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+  #modal {
+    width: 600px;
+    border: 1px solid #CCC;
+    box-shadow: 0 1px 5px #CCC;
+    border-radius: 5px;
+    font-family: verdana;
+    margin: 25px auto;
+    overflow: hidden;
+  }
+  #modal header {
+    background: #f1f1f1;
+    background-image: -webkit-linear-gradient( top, #f1f1f1, #CCC );
+    background-image: -ms-linear-gradient( top, #f1f1f1, #CCC );
+    background-image: -moz-linear-gradient( top, #f1f1f1, #CCC );
+    background-image: -o-linear-gradient( top, #f1f1f1, #CCC );
+    box-shadow: 0 1px 2px #888;
+    padding: 10px;
+  }
+  #modal h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 0 1px 2px white;
+    color: #888;
+    text-align: center;
+    background: white;
+  }
+  #modal section {
+    padding: 10px 30px; 
+    font-size: 12px;
+    line-height: 175%;
+    color: #333;
+  }

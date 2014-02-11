@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBnHaGoNckTGU4G4V91ZhAkW7es6-XIm9Q&sensor=false">
+</script>
+
+<script>
+var x=new google.maps.LatLng(52.395715,4.888916);
+var stavanger=new google.maps.LatLng(58.983991,5.734863);
+var amsterdam=new google.maps.LatLng(52.395715,4.888916);
+var london=new google.maps.LatLng(51.508742,-0.120850);
+var lol=new google.maps.LatLng(10.508742,-5.2300);
+
+function initialize()
+{
+var mapProp = {
+  center:x,
+  zoom:4,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+ var rectangle = new google.maps.Rectangle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    bounds: new google.maps.LatLngBounds(
+      london, amsterdam)
+  });
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+</html>
+
